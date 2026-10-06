@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth & Death Registration Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f7f9fa;
+            color: #333;
+        }
+
+        /* Top Bar & Header */
+        .top-header {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            border-bottom: 3px solid #0d3b66;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .emblem {
+            height: 50px;
+        }
+
+        .brand-text h1 {
+            font-size: 1.2rem;
+            color: #0d3b66;
+            font-weight: bold;
+        }
+
+        .brand-text p {
+            font-size: 0.75rem;
+            color: #555;
+        }
+
+        .right-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .accessibility-btn {
+            padding: 4px 8px;
+            border: 1px solid #ccc;
+            background: #fff;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .login-btn {
+            background-color: #f39c12;
+            color: #fff;
+            border: none;
+            padding: 6px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Navigation Menu */
+        .nav-bar {
+            background-color: #0e3860;
+            display: flex;
+            justify-content: center;
+            padding: 12px 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-bar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Container & Certificate Card */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh;
+            padding: 40px 20px;
+            background-image: radial-gradient(#e1e7ec 15%, transparent 16%);
+            background-size: 60px 60px;
+        }
+
+        .details-card {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            border: 1px solid #dcdcdc;
+        }
+
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .details-table th, .details-table td {
+            border: 1px solid #cccccc;
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .details-table th {
+            background-color: #ffffff;
+            color: #444;
+            font-weight: 600;
+            width: 35%;
+        }
+
+        .details-table td {
+            color: #111;
+            font-weight: 500;
+        }
+
+        /* Footer Sections */
+        .gov-banners {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .gov-banners img {
+            height: 35px;
+            filter: grayscale(20%);
+        }
+
+        footer {
+            background-color: #0c2944;
+            color: #ffffff;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright-text {
+            color: #b0c4de;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+  <!-- Header Section Start -->
+<header class="top-header" style="display: block; width: 100%; clear: both; padding: 15px 0; min-height: 80px;">
+    
+    <!-- 1. Left side ka main section (Logo + Text) -->
+    <div class="logo-section" style="float: left; display: flex; align-items: center;">
+        
+        <!-- YAHAN NAYA REGISTRAR LOGO ADD KIYA HAI -->
+        <div style="display: inline-block; margin-right: 15px; vertical-align: middle;">
+            <img src="Screenshot 2026-10-06 000204.png" alt="Registrar General India Logo" class="rgi-logo-img" style="width: 65px; height: auto; display: block;">
+        </div>
+        
+        <!-- Text details jo logo ke theek baad dikhegi -->
+        <div class="brand-text" style="display: inline-block; vertical-align: middle;">
+            <h1 style="margin: 0; font-size: 22px; font-weight: bold; color: #333;">Birth & Death Registration</h1>
+            <p style="margin: 5px 0 0 0; font-size: 12px; color: #555; line-height: 1.2;">Office of the Registrar General & Census Commissioner, India<br>Ministry of Home Affairs</p>
+        </div>
+        
+        <!-- 2. Ashok Stambh Emblem: Agar aapko beech me Ashok Stambh bhi rakhna hai, to ye block rehne dein. Agar nahi rakhna to is pure <div> ko delete kar sakte hain. -->
+        <div style="display: inline-block; margin-left: 400px; vertical-align: middle;">
+            <img src="Screenshot 2026-10-05 225830.png" alt="Government of India Emblem" class="emblem-img" style="width:75px; height: auto;">
+        </div>
+
+    </div>
+
+    <!-- 3. Right side ke saare buttons (Extreme Right me lock rehne ke liye) -->
+    <div class="right-controls" style="float: right; display: flex; align-items: center; gap: 8px; margin-top: 15px;">
+        <button class="accessibility-btn" style="padding: 5px 10px; cursor: pointer;">A<sup>+</sup></button>
+        <button class="accessibility-btn" style="padding: 5px 10px; cursor: pointer;">A</button>
+        <button class="accessibility-btn" style="padding: 5px 10px; cursor: pointer;">A<sup>-</sup></button>
+        <button class="login-btn" style="padding: 6px 18px; margin-left: 10px; cursor: pointer; background-color: #f26f21; color: white; border: none; border-radius: 4px; font-weight: bold;">Login</button>
+    </div>
+
+</header>
+<div style="clear: both;"></div>
+<!-- Header Section End -->
+
+    <!-- Navigation Menu Bar -->
+    <nav class="nav-bar">
+        <a href="#">Home</a>
+        <a href="#">About CRS</a>
+        <a href="#">RBD Act and Model Rules ▾</a>
+        <a href="#">Circulars</a>
+        <a href="#">Forms ▾</a>
+        <a href="#">Training Manuals</a>
+        <a href="#">FAQs ▾</a>
+        <a href="#">How To Apply</a>
+    </nav>
+
+    <!-- Main Section with Dynamic Verification Card -->
+    <main class="main-content">
+        <div class="details-card">
+            <table class="details-table">
+                <tr>
+                    <th>Registration Number</th>
+                    <td>D-2026: 5-56300-002235</td>
+                </tr>
+                <tr>
+                    <th>NAME</th>
+                    <td>RISHABH KUMAR</td>
+                </tr>
+                <tr>
+                    <th>GENDER</th>
+                    <td>Male</td>
+                </tr>
+                <tr>
+                    <th>DOB</th>
+                    <td>31-08-1996</td>
+                </tr>
+                <tr>
+                    <th>Name Of Mother</th>
+                    <td>NISHA</td>
+                </tr>
+                <tr>
+                    <th>Name Of Father</th>
+                    <td>OM PRAKASH</td>
+                </tr>
+                <tr>
+                    <th>Place Of Death</th>
+                    <td>RESIDANCE 1469/5-C, SHIV VIHAR COLONY, NEW KACHHIYANA PULIYA NO 9, JHANSI, HANSARI GIRD II, JHANSI, JHANSI, JHANSI, UTTAR PRADESH / RESIDANCE 1469/5-C, SHIV VIHAR COLONY, NEW KACHHIYANA PULIYA NO 9, JHANSI, HANSARI GIRD II, JHANSI, JHANSI, JHANSI, UTTAR PRADESH</td>
+                </tr>
+                <tr>
+                    <th>Registration Date</th>
+                    <td>23-09-2026</td>
+                </tr>
+                <tr>
+                    <th>Registration Unit Name</th>
+                    <td>Jhansi Municipal Corporation</td>
+                </tr>
+                <tr>
+                    <th>Registration Unit Code</th>
+                    <td>56300</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <!-- Government Platform Branding Elements -->
+    <section class="gov-banners">
+        <div style="font-weight: bold; color: #555; font-size: 1.1rem;">data.gov.in</div>
+        <div style="font-weight: bold; color: #111; font-size: 1.1rem;">india.gov.in</div>
+        <div style="font-weight: bold; color: #777; font-size: 0.9rem;">Digital India</div>
+        <div style="font-weight: bold; color: #444; font-size: 0.9rem;">myGov</div>
+    </section>
+
+    <!-- Footer Page Details -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Website Policy</a> | 
+            <a href="#">Mobile App Privacy Policy</a> | 
+            <a href="#">Terms & Conditions</a> | 
+            <a href="#">Accessibility Statement</a> | 
+            <a href="#">Web Information Manager</a>
+        </div>
+        <p>Feedback | Sitemap | Contact Us | Vacancies | Product & Services | Pricing | Cancellation Policy | Grievance Management Policy</p>
+        <p class="copyright-text">Last Updated: 30-01-2024 12:16:17</p>
+        <p class="copyright-text">Website Developed & Maintained by Office of the Registrar General & Census Commissioner of India,<br>Ministry of Home Affairs</p>
+    </footer>
+
+</body>
+</html>
